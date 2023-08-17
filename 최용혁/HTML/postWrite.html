@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 작성</title>
+    <link rel="stylesheet" href="/최용혁/CSS/postWrite.css">
+</head>
+
+<body>
+    <div class="C-postWrite-container">
+        <div class="C-header">헤더부분</div>
+        <div class="C-body">
+            <form action="#" method="get">
+                <div class="C-postWrite-body">
+                    <div class="C-postWrite-title">게시글 작성</div>
+                    <fieldset>
+                        <table class="C-input-table">
+                            <tr>
+                                <td>작성자</td>
+                                <td>
+                                    <input type="text" name="C-postWrite-Writer" id="C-postWrite-Writer"  placeholder="작성자:디폴트값" >
+                                </td>
+                                <td class="C-postWritedate-title">작성일</td>
+                                <td>
+                                    <input type="text" name="C-postWrite-date" id="C-postWrite-date" placeholder="작성일:오늘날짜로 디폴트">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>제목</td>
+                                <td colspan="3"><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>사진</td>
+                                <td>
+                                    <button type="button" id="C-addPicture">사진추가</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="C-newPicture">
+                                    <span id="C-picture"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>내용</td>
+                                <td colspan="3">
+                                    <textarea name="C-postWritearea" id="C-postWritearea" cols="60" rows="10" placeholder="내용을 입력해주세요"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="C-btn-cancel">
+                                    <button type="button" id="C-postWritebtn-cancel">
+                                        <a href="#" id="C-post-cancel">게시글 작성 취소</a>
+                                    </button>
+                                </td>
+                                <td class="C-btn-clear">
+                                    <button type="button" id="C-postWritebtn-clear">
+                                        <a href="#" id="C-post-clear">게시글 작성</a>
+                                    </button>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+        <div class="C-footer">풋터부분</div>
+    </div>
+
+    <script src="../js/postWrite.js"></script>
+</body>
+
+</html>

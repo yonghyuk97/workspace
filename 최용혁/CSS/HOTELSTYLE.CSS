@@ -1,0 +1,528 @@
+*{box-sizing: border-box;
+    height: auto;
+}
+
+div{
+    font-weight: bold;
+}
+.container{
+
+    width: 180vh;
+    height: 3500px;
+    margin: 10px;
+    margin-left: 70px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* --------------------------- header ---------------------------------- */
+.header{
+    background: #ebe7e3;
+    display: flex;
+    height: 100px;
+    width: 100%;
+    color: #ebe7e3;
+}
+
+.search{
+    display: flex;
+    flex-direction: column;
+    width: 33.33%;
+}
+
+.search > div:nth-child(1){
+    height: 50%;
+}
+
+.reservation{
+
+    display: flex;
+    height: 50%;
+    font-weight: bold;
+    
+}
+.rsv1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding-left: 20%;
+    
+}
+.rsv1 > a{
+    color:#555;
+}
+.rsv2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding-right: 10%;
+}
+.rsv2 > a {
+    color: #555;
+    padding: 0 50px;
+}
+
+.hotel-logo{
+    position: relative;
+    width: 33.33%;
+}
+
+#pic-logo{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+.banner{
+    width: 33.33%;
+}
+
+.ban1{
+    display: flex;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    margin-left: 30px;
+}
+.ban1-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+.ban1-2 > a{
+    color: #555;
+}
+
+#korea{
+    border: none;
+    background-color: #ebe7e6;
+    font-weight: bold;
+    color: #555;
+}
+
+#shilla{
+    border: none;
+    background-color:#ABA195;
+    width: 100px;
+    height: 40px;
+    margin-right: 30px;
+}
+#shilla:hover{
+    background-color: #585553;
+}
+
+.ban2{
+    display: flex;
+    width: 100%;
+    height: 50%;
+}
+.ban2-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33.33%;
+}
+.ban2-2 > a{
+    color: #555;
+}
+
+#button2-2:hover{
+    padding-bottom: 3px solid black;
+}
+
+/* ----------------------------- 광고 ------------------------------------ */
+
+.big-event{
+    height: 650px;
+}
+#pic1{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* ----------------------------- nav  --------------------------------- */
+.nav{
+    
+    height: 150px;
+    display: flex;
+}
+
+.nav > div:first-child{
+    width: 9%;
+}
+
+.nav > div:last-child{
+    width: 10%;
+}
+
+.nav1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 15%;
+    font-size: large;
+}
+
+.nav1 > div:nth-child(1){
+    height: 50%;
+}
+
+.nav2{
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: large;
+}
+
+.nav3{
+    width: 5%;
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: large;
+}
+   
+
+.nav4{
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: large;
+}
+
+.nav5{
+    width: 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: large;
+}
+
+.nav6{
+    width: 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: large;
+}
+
+.nav7{
+    width: 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: large;
+}
+
+.nav8{
+    width: 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: large;
+}
+
+.nav9{
+    width: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav9-button{
+   width: 100px;
+   height: 50px;
+   background-color: #ABA195;
+   color: white;
+   border: none;
+}
+
+#nav9-button:hover{
+    cursor: pointer;
+
+}
+
+
+
+
+/* ----------------------------- content --------------------------------- */
+.content{
+    height:1900px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+.content1{
+    height: 12%;
+    display: flex;
+    justify-content: center;
+}
+
+#s-offer{
+    background-color: #ebe7e3;
+}
+
+.content2{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+.content2 a{
+    padding: 40px;
+}
+
+.content3{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.content3 a{
+    padding: 40px;
+}
+
+
+#mini4{
+    width: 850px;
+    position: relative;
+}
+
+#mini5{
+    width: 387px;
+    height: 300px;
+}
+
+.content4{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.content4 a{
+    padding: 40px;
+}
+
+#mini6{
+    padding-top: 70px;
+}
+
+#mini7{
+    padding-top: 70px;
+}
+
+.content5{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.content5 a{
+    padding: 40px;
+}
+
+
+/* ----------------------------- footer--------------------------------- */
+.footer{
+    height: 410px;
+ 
+}
+
+.footer1{
+    height: 50%;
+
+}
+
+#img-big{
+    width: 100%;
+}
+
+.footer2{
+    height: 250px;
+    width: 100%;
+    
+}
+
+.abc{
+    display: flex;
+    background-color: #ebe7e3;
+
+}
+
+.abc > div:nth-child(1){
+    width: 125px;
+}
+
+.abc img{
+    width: 250px;
+    
+}
+
+.abc > div:nth-child(3){
+    width: 125px;
+    text-align: center;
+    padding-top: 40px;
+    color: #555;
+}
+.abc > div:nth-child(5){
+    width: 125px;
+    text-align: center;
+    padding-top: 40px;
+    color: #555;
+}
+.abc > div:nth-child(7){
+    width: 125px;
+    text-align: center;
+    padding-top: 40px;
+    color: #555;
+}
+
+.abc > span:nth-child(4) {
+    padding-top: 39px;
+    color: #555;
+}
+
+.abc > span:nth-child(6) {
+    color: #555;
+    padding-top: 39px;
+}
+
+.abc > div:nth-child(8){
+    width: 600px;
+  
+}
+
+.def{
+    height: 150px;
+    
+}
+.aaa{
+    height: 50%;
+    display: flex;
+    background-color: #ebe7e3;
+}
+
+.bbb{
+    height: 50%;
+    display: flex;
+}
+
+.aaa1{
+    width: 150px;
+}
+
+.aaa2{
+    width: 8%;
+    padding-top: 20px;
+}
+.aaa > span{
+    padding-top:20px;
+    color:#555;;
+}
+
+.aaa3{
+    width: 7%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.aaa4{
+    width: 9%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.aaa5{
+    width: 10%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.aaa6{
+    width: 10%;
+    text-align: center;
+    padding-top: 20px;
+}
+.aaa7{
+    width: 400px;
+}
+
+.aaa8{
+    width: 9%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.aaa9{
+    width: 3%;
+
+    padding-top: 20px;
+}
+
+.aaa10{
+    width: 7%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.mmm{
+    color: #555;;
+    
+}
+
+pre{
+    color:silver;
+    padding-right: 450px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

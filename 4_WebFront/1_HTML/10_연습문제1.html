@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_연습문제</title>
+    <link rel="stylesheet" href="css/selector-test.css">
+</head>
+<body>
+    <form>
+        <label for="name">고객명 : </label>
+        <input type="text" name="name" id="name"> <br><br>
+
+        <label for="phone">전화번호</label>
+        <input type="tel" name="phone" id="phone"><br><br>
+
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email"><br><br>
+
+        <label for="select">피자 선택 : </label>
+        <select name="pizza" id="select">
+            <option value="null" selected>피자를 선택하세요</option>
+            <option value="cheese" >치즈피자</option>
+            <option value="bulgogi" >불고기피자</option>
+            <option value="maxican" >멕시칸피자</option>
+        </select>
+
+        <fieldset>
+            <legend class="pizzasize">피자 사이즈</legend>
+            
+            <label for="S-size"></label><input type="radio" name="pizzasize" id="S-size" value="Small"> Small <br><br>
+           
+            <label for="M-size"></label><input type="radio" name="pizzasize" id="M-size" value="Medium"> Medium <br><br>
+            
+            <label for="L-size"></label><input type="radio" name="pizzasize" id="L-size" value="Large"> Large <br><br>
+          
+        </fieldset>
+        
+        <fieldset>
+            <legend>토핑 선택</legend>
+
+             <input type="checkbox" name="topping" id="B-topping" value="베이컨"><label for="B-topping">베이컨</label><br><br>
+             <input type="checkbox" name="topping" id="C-topping" value="치즈"><label for="C-topping">치즈</label><br><br>
+             <input type="checkbox" name="topping" id="O=topping" value="양파"><label for="O-topping">양파</label><br><br>
+             <input type="checkbox" name="topping" id="M-topping" value="버섯"><label for="M-topping">버섯</label><br><br>
+
+        </fieldset>
+        <br>
+        <label for="time">희망 배송 시간 : </label><input type="time" name="time" id="time">
+
+        <br><br>
+
+        <label for="order">배송시 요청사항 : </label><textarea name="order" id="order" cols="20" rows="3"></textarea>
+
+        <br><br>
+        <button>주문하기</button>
+    </form>
+  
+</body>
+</html>

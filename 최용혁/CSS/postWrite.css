@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+}
+div{
+    border: 1px solid black;
+}
+
+.C-postWrite-container{ /* 제일 큰 div */
+
+    width: 100%;
+    height: auto;
+}
+/*--------------------------------헤더-----------------------------------*/
+.C-header{
+    width: 100%;
+    height: 200px;
+}
+/*--------------------------------헤더-----------------------------------*/
+
+
+/*--------------------------------바디-----------------------------------*/
+.C-body{ /* 바디 전체 */
+    width: 100%;
+    height: auto;
+    
+}
+.C-postWrite-body{ /* 게시글 작성 큰 틀 */
+    width: 1200px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.C-postWrite-title{ /* 게시글 작성 글씨 */
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+#C-postWrite-Writer{ /* 작성자 input태그 */
+    width: 170px;
+}
+
+.C-postWritedate-title{ /* 작성일 글씨 */
+    padding-left: 35px;
+}
+#C-postWrite-date{
+    width: 120px;
+}
+.C-input-table{ /* 게시글 작성 table */
+    margin: auto;
+}
+
+#container {
+    margin-top: 20px;
+}
+
+.image-container { /* 추가된 사진 부분 */
+    display: flex;
+    margin-right: 10px;
+}
+
+tr > td{ 
+    padding: 10px;
+}
+
+#C-postWritearea{ /* 게시글 내용 부분 */
+    height: 300px;
+    width: 580px;
+}
+
+.C-btn-cancel{
+    padding-left: 100px;
+    text-align: right;
+}
+
+#C-postWritebtn-cancel{ /* 작성 취소 버튼 */
+    background-color: brown;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+}
+
+#C-postWritebtn-clear{ /* 작성 버튼 */
+    background-color: brown;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+}
+
+#C-post-cancel{ /* 게시글 작성 취소 a태그 */
+    color: white;
+    text-decoration: none;
+}
+
+#C-post-clear{ /* 게시글 작성 a 태그 */
+    color: white;
+    text-decoration: none;
+}
+
+/*--------------------------------바디-----------------------------------*/
+
+/*--------------------------------풋터-----------------------------------*/
+.C-footer{
+    width: 100%;
+    height: 200px;
+}
+/*--------------------------------풋터-----------------------------------*/

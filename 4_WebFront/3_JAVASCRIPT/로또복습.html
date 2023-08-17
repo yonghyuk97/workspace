@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 복습</title>
+    <style>
+        #container{
+            display: flex;
+            width: 400px;
+            justify-content: space-around;
+
+            margin: 100px auto 50px;
+        }
+
+        #container > div{
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        #createLotto{
+            width: 300px;
+            height: 30px;
+            margin: auto;
+
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        
+    </div>
+
+    <button id="createLotto">로또 번호 생성</button>
+
+    <script>
+
+        document.getElementById("createLotto").addEventListener("click", function(){
+
+            const div = document.querySelectorAll("#container > div"); // 전체 div를 하나에 담음
+
+            const arr = []; // 0칸짜리 배열 생성 *값이 들어가면 배열이 늘어난다.
+
+            while(arr.length < 8){
+
+
+                // 로또 번호 생성시 1~45 난수 생성
+                const random = Math.floor(Math.random()*45+1);
+
+                // 생성된 난수가 배열에 있는지 검사
+                if(arr.indexOf(random)== -1){
+
+                    arr.push(random);
+
+                    console.log(arr);
+                }
+                
+            }
+
+            arr.sort( function(a,b){return a-b});   
+            
+        // arr의 인덱스 별로 lotto 인덱스의 저장된 값 출력
+            for(let i =0; i < arr.length; i++){
+                div[i].innerHTML = arr[i];
+            }
+        })
+
+
+    </script>
+</body>
+</html>

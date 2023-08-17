@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML연습문제_3</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+
+    <form>
+        <fieldset>
+            <legend>필수 입력 사항</legend>
+                <table>
+                    <tr>
+                        <th>
+                            <label for="아이디">
+                                ID
+                            </label>
+                        </th>
+                        <td><input type="text" name="아이디" id ="아이디" placeholder="아이디 10글자 이내"></td>
+                        <td>
+                            <button type="button">중복 확인</button>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th>
+                            <label for="비밀번호">
+                                비밀번호
+                            </label>
+                        </th>
+                        <td>
+                            <input type="password" name="비밀번호" id="비밀번호" placeholder="영문,숫자,특수문자 포함 8자 이상">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th>
+                            <label for="비밀번호확인">
+                                비밀번호 확인
+                            </label>
+                        </th>
+                        <td>
+                            <input type="password" name="비밀번호확인" id="비밀번호확인">
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <th>
+                            <label for="이메일">
+                                Email
+                            </label>
+                        </th>
+                        <td>
+                            <input type="text" name="email1" id="이메일"></td>
+                        <td>
+                        <select>
+                            <option value="이메일주소">직접입력</option>
+                            <option value="네이버">naver.com</option>
+                            <option value="다음">daum.net</option>
+                        </select>
+                        </td>
+                    </tr>
+                </table>
+        </fieldset>
+    
+        <fieldset>
+            <legend>추가 정보</legend>
+                <label for="프로필">
+                    프로필 사진 
+                </label>
+                <input type="file" name="프로필" id="프로필"> <br><br>
+
+            <label>
+                성별 : 
+            </label>
+                <input type="radio" name="gender" value="M" checked>남자
+                <input type="radio" name="gender" value="F">여자 <br><br>
+
+            <label for="생년월일">
+                생년월일 : 
+            </label>
+                <input type=date" name="생년월일" id="생년월일"> <br><br>
+
+            <label>
+                취미
+            </label><br>
+                <input type="checkbox" name="hobby" value="1"> 야구
+                <input type="checkbox" name="hobby" value="2"> 농구
+                <input type="checkbox" name="hobby" value="3"> 축구<br>
+                <input type="checkbox" name="hobby" value="4" checked> 공부
+                <input type="checkbox" name="hobby" value="5"> 음악감상<br>
+                <input type="checkbox" name="hobby" value="0"> 기타 <input type="text">
+            <br><br>
+
+            <label for="자기소개">
+                자기소개
+            </label>
+
+            <br>
+
+            <textarea name="자기소개" id="자기소개" rows="5" cols="40">
+
+            </textarea><br>
+        </fieldset>
+
+        <br>
+    
+        <button>회원가입</button>
+
+        <button type="reset">다시입력</button>
+
+        <button type="button">이전으로</button>
+        
+    </form>
+</body>
+</html>
