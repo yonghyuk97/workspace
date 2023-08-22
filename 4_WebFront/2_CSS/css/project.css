@@ -1,0 +1,12 @@
+.moving{
+    border: 1px solid black;
+    width: 500px; height: 500px;
+    background-image: url(/공원\ 배경\ 일러스트\ 500\ 500.jpg);
+    animation: movebg 2s linear infinite;
+}
+
+    
+@keyframes movebg {
+    0%{background-position:0 center;}
+    100%{background-position:-500px center;}
+}
