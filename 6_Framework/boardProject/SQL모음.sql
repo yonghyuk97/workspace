@@ -582,6 +582,13 @@ SELECT COUNT(*) FROM BOARD_LIKE
 WHERE BOARD_NO = 1995 -- 게시글 번호
 AND MEMBER_NO = 1; -- 로그인한 회원의 번호
 
+-- 프로필 이미지 수정
+UPDATE MEMBER
+SET PROFILE_IMG = #{loginMember.profileImg}
+WHERE MEMBER_NO = #{loginMember.memberNo}
+
+
+
 
 COMMIT;
 
