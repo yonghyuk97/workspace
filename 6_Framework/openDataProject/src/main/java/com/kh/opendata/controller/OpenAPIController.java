@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
@@ -95,6 +96,42 @@ public class OpenAPIController {
 		System.out.println(responseText);
 		
 		return responseText;
+	}
+	
+	// xml 형식으로 지진 해일 대피소 OpenApi 활용하기
+	@RequestMapping(value = "place", produces = "text/xml; charset=UTF-8")
+	@ResponseBody
+	public String shelterList() throws IOException {
+		
+		String url = "http://apis.data.go.kr/1741000/TsunamiShelter3/getTsunamiShelter1List";
+		url += "?serviceKey="+SERVICEKEY; // 서비스키가 추가
+		url += "&pageNo=10"; 
+		url += "&type=xml"; // return 타입
+		url += "&numOfRows=100"; // 결과 개수
+		
+		URL requestUrl = new URL(url);
+		
+		HttpURLConnection urlConn = (HttpURLConnection)requestUrl.openConnection();
+		
+		urlConn.setRequestMethod("GET");
+		
+		String responseText = "";
+		String line;
+		
+		BufferedReader br =new BufferedReader(new InputStreamReader(urlConn.getInputStream()));
+		
+		while((line=br.readLine()) != null) {
+			responseText += line;
+			
+			
+		}
+		br.close();
+		urlConn.disconnect();
+		
+		System.out.println(responseText);
+		
+		return responseText;
+
 	}
 	
 	

@@ -19,6 +19,7 @@ public class Board {
 	private String boardUpdateDate;
 	private int readCount;
 	private int boardCode;
+	private String boardName;
 	
 	// 서브쿼리
 	private int commentCount; // 댓글 수

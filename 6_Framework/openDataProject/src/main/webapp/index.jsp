@@ -10,7 +10,7 @@
 <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 <body>
-	
+   
 	<h1>실시간 대기오염 정보</h1>
 	
 	지역 :
@@ -125,5 +125,76 @@
       })
    </script>
 	
+   <hr>
+   
+   <h1>실시간 지진해일 긴급 대피장소</h1>
+   
+   <button id="btn2">실시간 지진해일 긴급 대피장소 정보</button>
+   <br><br>
+   
+   <table border="1" id="result2">
+      <thead>
+         <tr>
+            <th>시도명</th>
+            <th>시군구명</th>
+            <th>대피지구명</th>
+            <th>대피장소명</th>
+            <th>주소</th>
+            <th>경도</th>
+            <th>위도</th>
+            <th>수용가능인원수</th>
+            <th>대피소 분류명</th>
+         </tr>
+      </thead>
+      <tbody></tbody>
+   </table>
+
+   <script>
+
+      $(function(){
+         $("#btn2").click(function(){
+            $.ajax({
+               url : "place",
+               success:function(data){
+            	   const itemArr = $(data).find("row");
+
+                   let value;
+                   itemArr.each(function(index, item){
+                      console.log($(item).find("row").text());
+
+                      value += "<tr>" 
+                         + "<td>" + $(item).find("sido_name").text()   + "</td>" 
+                         + "<td>" + $(item).find("sigungu_name").text()      + "</td>" 
+                         + "<td>" + $(item).find("remarks").text()     + "</td>" 
+                         + "<td>" + $(item).find("shel_nm").text()     + "</td>" 
+                         + "<td>" + $(item).find("address").text()      + "</td>" 
+                         + "<td>" + $(item).find("lon").text()       + "</td>" 
+                         + "<td>" + $(item).find("lat").text()      + "</td>" 
+                         + "<td>" + $(item).find("shel_av").text()       + "</td>" 
+                         + "<td>" + $(item).find("shel_div_type").text()       + "</td>" 
+                         + "</tr>"; 
+                   })
+                   
+                   // 3. 동적으로 만들어낸 요소를 화면에 출력
+                   $("#result2 > tbody").html(value);
+               },
+               error:function(){
+                  console.log("통신오류");
+               }
+            })
+         })
+      })
+
+
+
+
+
+
+
+
+
+
+   </script>
+
 </body>
 </html>
