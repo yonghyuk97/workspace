@@ -48,9 +48,13 @@ boardLike.addEventListener("click",e => {
         console.log("예외 발생");
         console.log(err);
     })
-
-
-        
     
-})
+});
+
+// 게시글 수정 버튼 클릭 시 
+document.getElementById("updateBtn").addEventListener("click", ()=>{
+
+    location.href = location.pathname.replace("board","board2") + "/update" + location.search;
+    // 원래 주소 : board/1/2012 에서 board를 board2로 바꾸고 뒤에 /update를 붙힌 다음 location.search( 쿼리스트링 ) 붙이기
+});
 
