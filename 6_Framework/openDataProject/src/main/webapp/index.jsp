@@ -94,7 +94,10 @@
                   // 1. 넘겨받은 데이터를 $() 제이쿼리화 시킨 후
                   //    응답 데이터 안에 실제 데이터가 담겨있는 요소 선택
                   const itemArr = $(result).find("item");
-
+                  
+                  const add = document.getElementsByTagName("tbody")[0];
+                  console.log(add);
+                  
                   let value;
                   // 2. 반복문을 통해 실제 데이터가 담긴 요소들에 접근해서 동적으로 요소 만들기
                   itemArr.each(function(index, item){
@@ -185,16 +188,52 @@
          })
       })
 
-
-
-
-
-
-
-
-
-
    </script>
+
+  <hr>
+   
+  <h1>초미세먼지 주간 예보</h1>
+  
+  <button id="btn3">통보코드와 통보시간으로 예보정보와 발생 원인 정보를 조회하는 대기질(미세먼지/오존) 예보통보 조회</button>
+  <br><br>
+  
+  <table border="1" id="result3">
+     <thead>
+        <tr>
+           <th>결과코드</th>
+           <th>결과메세지</th>
+           <th>목록</th>
+           <th>통보시간</th>
+           <th>통보코드</th>
+           <th>예보개황</th>
+           <th>발생원인</th>
+           <th>예보등급</th>
+           <th>행동요령</th>
+           <th>예측통보시간</th>
+        </tr>
+     </thead>
+     <tbody></tbody>
+  </table>
+
+  <script>
+
+   document.getElementById("btn3").addEventListener("click",()=>{
+
+      fetch("/clean")
+      .then(resp => resp.json())
+      .then(result =>{
+         const Alist = $(result).find("items");
+         console.log(Alist);
+      })
+      .catch(err => {
+         console.log(err)
+      })
+   })
+
+   const add = document.getElementsByTagName("tbody")[0];
+
+
+  </script>
 
 </body>
 </html>
