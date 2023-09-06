@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>대기오염 공공데이터</title>
 <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
    
@@ -43,13 +44,13 @@
 	<script>
       $(function(){
          $("#btn1").click(function(){
-            /* Json 형식으로 응답 받을 때
+         
             $.ajax({
                url : "air",
                data : {"location": $("#location").val()},
                success : function(data){
-                  // console.log(data);
-                  // console.log(data.response.body.items);
+                  console.log(data);
+                  console.log(data.response.body.items);
 
                   const itemArr = data.response.body.items;
                   
@@ -72,11 +73,12 @@
 
 
                }, error : function(){
+                  
                   console.log("통신 실패");
                }
             })
-            */
-
+       
+/*
             //--------------------------------------------------------------
             // 응답 데이터를 xml 형식으로 받을 때
             $.ajax({
@@ -124,8 +126,12 @@
                   console.log("통신 실패");
                }
             })
+
+            */
          })
       })
+
+      
    </script>
 	
    <hr>
@@ -232,8 +238,56 @@
 
    const add = document.getElementsByTagName("tbody")[0];
 
-
   </script>
+
+    <hr>
+   
+   <h1>실시간 지진해일 긴급 대피장소</h1>
+   
+   <button id="btn4">실시간 지진해일 긴급 대피장소 정보</button>
+   <br><br>
+   
+   <table border="1" id="result5">
+      <thead>
+         <tr>
+            <th>시도명</th>
+            <th>시군구명</th>
+            <th>대피지구명</th>
+            <th>대피장소명</th>
+            <th>주소</th>
+            <th>경도</th>
+            <th>위도</th>
+            <th>수용가능인원수</th>
+            <th>대피소 분류명</th>
+         </tr>
+      </thead>
+      <tbody></tbody>
+   </table>
+
+
+   <script>
+
+      $("#btn4").click(function(){
+         console.log("왜 안되는 거냐 ?");
+      })
+
+
+      $(function(){
+         $("#btn4").click(function(){
+            $.ajax({
+              url:"test",
+              success:function(data){
+               console.log(data);
+              },
+              error:function(){
+               console.log("통신 장애");
+              }
+            })
+         })
+      })
+
+   </script>
+
 
 </body>
 </html>

@@ -269,9 +269,8 @@
 	<!-- 이미지 삭제 -->
 	<delete id="imageDelete">
 		DELETE FROM BOARD_IMG
-		WHERE BOARD_NO = #{board_no}
-		AND
-		IMG_ORDER IN (${deleteList})
+		WHERE BOARD_NO = #{boardNo}
+		AND IMG_ORDER IN (${deleteList})
 	</delete>
 
 
@@ -298,8 +297,7 @@
 	<update id="boardDelete">
 		UPDATE "BOARD" SET
 		BOARD_DEL_FL = 'Y'
-		WHERE BOARD_CODE
-		= #{boardCode}
+		WHERE BOARD_CODE = #{boardCode}
 		AND BOARD_NO = #{boardNo}
 	</update>
 
@@ -396,16 +394,13 @@
 
 		</choose>
 		
-		
-		
-		
-		
-		
-		
 		ORDER BY BOARD_NO DESC
 	</select>
 
-
+	<select id="selectImageListAll" resultType="string">
+		SELECT IMG_RENAME FROM BOARD_IMG
+	</select>
+	
 
 
 </mapper>

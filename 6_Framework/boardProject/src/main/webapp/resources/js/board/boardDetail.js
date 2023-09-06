@@ -68,7 +68,7 @@ if(loginMemberNo != ""){ // 쌤은 버튼이 없을떄로 함 updateBtn != null
             = location.pathname.replace("board","board2")
                 + "/delete";
             //   /board2/1/2006/delete (GET)
-    
+            
             // 삭제 서비스 호출 성공 시 redirect:/board/{boardCode}
             // + RedirectAttributes 이용해서 "삭제 되었습니다" alert 출력
     
