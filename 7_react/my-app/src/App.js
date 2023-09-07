@@ -8,7 +8,8 @@ import Ex2 from './components/Exam2';
 import PropsEx from './components/R01_props.js';
 import State1 from './components/R02_state1.js';
 import State2 from './components/R03_state2.js';
-
+import State3 from './components/R04_state3.js';
+import TodoList1 from './components/R05_todolist1.js';
 
 function App() {
   // 리액트의 컴포넌트(= 화면을 구성하는 단위)는 딱 하나의 요소만을 반환할 수 있다.
@@ -30,10 +31,17 @@ function App() {
       {/* <PropsEx name={'이길동'}/> */} 
 
       {/* R02_state1 */}
-      <State1/>
+      {/* <State1/> */}
 
       {/* R03_state2 */}
-      <State2 init={100}/>
+      {/* <State2 init={100}/> */}
+
+      {/* <hr/> */}
+      {/* R03_steat3 */}
+      {/* <State3/> */}
+
+      {/* R05_todolist1 */}
+      <TodoList1/>
     </>
   );
 }
