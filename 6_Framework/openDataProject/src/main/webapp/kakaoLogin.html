@@ -1,0 +1,147 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 1. 카카오SDK로드 -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+</head>
+<body>
+
+  <form action="/member/login" method="post">
+
+    <table>
+       <tr>
+          <td><input type="text" name="memberId"></td>
+          <td rowspan="2"><button>로그인</button></td>
+       </tr>
+       <tr>
+          <td><input type="text" name="memberPw"></td>
+       </tr>
+
+    </table>
+ </form>
+
+    <div id="custom-login-btn" >
+        <img src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg" width="222" />
+    </div>
+
+    <button class="api-btn" onclick="kakaoLogout()">로그아웃</button>
+
+    <script type="text/javascript">
+
+      const loginBtn = document.getElementById("custom-login-btn");
+
+        // 2. 카카오 초기화
+        Kakao.init('62f7ea0222f3285d1ad23db4dfc3ea64');
+        console.log( Kakao.isInitialized() ); // 초기화 판단여부
+
+        // 3. 데모버전으로 들어가서 카카오로그인 코드를 확인.
+
+        loginBtn.addEventListener("click", () => {
+          Kakao.Auth.login({
+              success: function (authObj) {
+                  console.log(authObj); // access토큰 값
+                  Kakao.Auth.setAccessToken(authObj.access_token); // access토큰값 저장
+  
+                  getInfo();
+              },
+              fail: function (err) {
+                  console.log(err);
+              }
+          })
+
+        });
+        
+
+        // 4. 엑세스 토큰을 발급받고, 아래 함수를 호출시켜서 사용자 정보를 받아옴.
+        function getInfo() {
+            Kakao.API.request({
+                url: '/v2/user/me',
+                success: function (res) {
+                    console.log(res);
+                    // 이메일, 성별, 닉네임, 프로필이미지
+                    var email = res.kakao_account.email;
+                    var nickname = res.kakao_account.profile.nickname;
+
+                    const data = {
+                      "email" : email,
+                      "nickname" : nickname
+                    }
+
+                    fetch("/member/kakao", {
+                      method : "POST",
+                      headers : {"Content-Type" : "application/json"},
+                      body : JSON.stringify(data)
+                    })
+
+                    .then(resp => resp.text())
+
+                    .then( result => {
+
+                      // result 가 1이면 회원가입 성공
+                      // result 가 -1이면 로그인  성공
+                      
+
+                      if(result == 0){
+                        alert("로그인 실패..")
+                      }
+
+                      if(result == -1){
+                        alert("로그인 성공!!")
+                      }
+
+                      if(result == 1){
+                        alert("회원가입 성공!!!")
+                      }
+
+                    }
+
+
+                    )
+
+                    .catch(err => console.log(err));
+
+
+
+
+
+
+                    
+                    //location.href="/member/kakao"
+                    //console.log(email,  nickname);
+                },
+                fail: function (error) {
+                    alert('카카오 로그인에 실패했습니다. 관리자에게 문의하세요.' + JSON.stringify(error));
+                }
+            });
+        }
+
+        // 5. 로그아웃 기능 - 카카오 서버에 접속하는 엑세스 토큰을 만료, 사용자 어플리케이션의 로그아웃은 따로 진행.
+        function kakaoLogout() {
+            if (!Kakao.Auth.getAccessToken()) {
+                
+                alert('Not logged in.');
+
+                return;
+            }
+            Kakao.Auth.logout(function() {
+
+                alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken());
+            });
+        }
+    </script>
+    
+</body>
+</html>

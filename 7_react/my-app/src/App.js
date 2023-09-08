@@ -10,6 +10,8 @@ import State1 from './components/R02_state1.js';
 import State2 from './components/R03_state2.js';
 import State3 from './components/R04_state3.js';
 import TodoList1 from './components/R05_todolist1.js';
+import ContextApi from './components/R06_context_api';
+import Test12 from './components/test';
 
 function App() {
   // 리액트의 컴포넌트(= 화면을 구성하는 단위)는 딱 하나의 요소만을 반환할 수 있다.
@@ -18,10 +20,13 @@ function App() {
     /* fragment(<></>) : 반환되는 요소를 감쌀 때 사용, 해석 */
     <>
     {/* jsx 주석 */}
-      <h1>hello React!!!</h1>
+      <div>
+        <h1>hello React!!!</h1>
 
-      <div>리액트 배운다~</div>
+        <div>리액트 배운다~</div>
 
+        <h2>난 리액트 쓰는 회사 안가!!!</h2>
+      </div>
       {/* <Ex1/> */}
 
       {/* <Ex2/> */}
@@ -42,6 +47,11 @@ function App() {
 
       {/* R05_todolist1 */}
       <TodoList1/>
+
+      {/* R06_Context_api */}
+      <ContextApi/>
+
+      <Test12/>
     </>
   );
 }

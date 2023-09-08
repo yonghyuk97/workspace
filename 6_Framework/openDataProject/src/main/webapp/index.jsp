@@ -7,11 +7,55 @@
 <head>
 <meta charset="UTF-8">
 <title>대기오염 공공데이터</title>
-<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-<script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <!-- jQuery -->
+   <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+   <!-- iamport.payment.js -->
+   <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+   <script>
+       var IMP = window.IMP; 
+       IMP.init('imp06854558'); 
+     
+       var today = new Date();   
+       var hours = today.getHours(); // 시
+       var minutes = today.getMinutes();  // 분
+       var seconds = today.getSeconds();  // 초
+       var milliseconds = today.getMilliseconds();
+       var makeMerchantUid = hours +  minutes + seconds + milliseconds;
+       
+
+       function requestPay() {
+           IMP.request_pay({
+               pg : 'kcp',
+               pay_method : 'card',
+               merchant_uid: "IMP"+makeMerchantUid, 
+               name : '당근 10kg',
+               amount : 1004,
+               buyer_email : 'Iamport@chai.finance',
+               buyer_name : '아임포트 기술지원팀',
+               buyer_tel : '010-1234-5678',
+               buyer_addr : '서울특별시 강남구 삼성동',
+               buyer_postcode : '123-456'
+           }, function (rsp) { // callback
+               if (rsp.success) {
+                   console.log(rsp);
+               } else {
+                   console.log(rsp);
+               }
+           });
+       }
+   </script>
 </head>
 <body>
-   
+
+   <button onclick="requestPay()">결제하기</button>
+
+
+
+
+
+
+
+
 	<h1>실시간 대기오염 정보</h1>
 	
 	지역 :
@@ -287,6 +331,9 @@
       })
 
    </script>
+
+
+
 
 
 </body>

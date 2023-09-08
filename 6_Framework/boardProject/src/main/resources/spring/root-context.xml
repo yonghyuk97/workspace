@@ -61,7 +61,8 @@
       MultipartFile 객체로 반환하고
       파일 외의 데이터(정수, 문자열 등의 텍스트 데이터)는 기존처럼 사용 가능(MultipartRequest 필요 없음)
    -->
-   <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+   <bean id="multipartResolver" 
+   class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
        <property name="maxUploadSize" value="104857600"/>
        <property name="maxUploadSizePerFile" value="104857600"/>
        <property name="maxInMemorySize" value="104857600"/>
