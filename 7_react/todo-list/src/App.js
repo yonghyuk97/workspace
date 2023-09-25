@@ -3,6 +3,7 @@ import React, { useState, createContext } from 'react';
 import './App.css';
 import SignupContainer from './Signup';
 import Login from './Login';
+import TodoList from './TodoList';
 
 export const TodoListContext = createContext(); // 전역변수 생성
 
@@ -17,7 +18,7 @@ function App() {
   const [todoList, setTodoList] = useState([]);
 
   return (
-    <TodoListContext.Provider value={ {setTodoList, setLoginMember, loginMember} }>
+    <TodoListContext.Provider value={ {setTodoList, setLoginMember, loginMember, todoList} }>
       <button onClick={ () => { setSignupView(!signupView) } }>
         { signupView ? ('회원 가입 닫기') : ('회원 가입 열기') }
       </button>
@@ -30,6 +31,13 @@ function App() {
 
     <h1>Todo List</h1>
     <Login/>
+
+    <hr/>
+    {/* 로그인이 되어 있을 때만 Todo-List 출력 */}
+
+    {loginMember && (<TodoList/>)}
+
+
     </TodoListContext.Provider>
   );
 }
