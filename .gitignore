@@ -101,6 +101,7 @@ replay_pid*
 classes/
 src/main/webapp/META-INF/
 jspwork/
+config.properties
 
 
 
